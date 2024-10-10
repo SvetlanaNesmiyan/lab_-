@@ -2,18 +2,18 @@ SELECT name, population
 FROM cities 
 WHERE population >= 1000000;
 
-SELECT * 
+SELECT id, name, population, region
 FROM cities 
 WHERE region IN ('E', 'W') 
 ORDER BY population DESC;
 
-SELECT * 
+SELECT id, name, population, region 
 FROM cities 
 WHERE population > 50000 
   AND region IN ('S', 'C', 'N')
 ORDER BY population DESC;
 
-SELECT * 
+SELECT id, name, population, region 
 FROM cities 
 WHERE population > 150000 
   AND population <= 350000 
@@ -21,7 +21,7 @@ WHERE population > 150000
 ORDER BY name 
 LIMIT 20;
 
-SELECT * 
+SELECT id, name, population, region 
 FROM cities 
 WHERE region NOT IN ('E', 'W') 
 ORDER BY population DESC 
