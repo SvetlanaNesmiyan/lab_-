@@ -1,11 +1,15 @@
 --task1
+CREATE DATABASE MetroMap;
+USE MetroMap;
+
+--task2
 CREATE TABLE Cities (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     country VARCHAR(255) NOT NULL
 );
 
---task2
+--task3
 CREATE TABLE MetroLines (
     id INT AUTO_INCREMENT PRIMARY KEY,
     city_id INT NOT NULL,
@@ -14,7 +18,7 @@ CREATE TABLE MetroLines (
     FOREIGN KEY (city_id) REFERENCES Cities(id) ON DELETE CASCADE
 );
 
---task3
+--task4
 CREATE TABLE Stations (
     id INT AUTO_INCREMENT PRIMARY KEY,
     line_id INT NOT NULL,
@@ -23,7 +27,7 @@ CREATE TABLE Stations (
     FOREIGN KEY (line_id) REFERENCES MetroLines(id) ON DELETE CASCADE
 );
 
---task4
+--task5
 CREATE TABLE Connections (
     id INT AUTO_INCREMENT PRIMARY KEY,
     station_id_from INT NOT NULL,
@@ -33,7 +37,7 @@ CREATE TABLE Connections (
     FOREIGN KEY (station_id_to) REFERENCES Stations(id) ON DELETE CASCADE
 );
 
---task5
+--task6
 CREATE TABLE StationInfo (
     station_id INT PRIMARY KEY,
     opened_date DATE,
